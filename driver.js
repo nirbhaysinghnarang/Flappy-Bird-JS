@@ -1,3 +1,6 @@
+function checkLoaded() {
+  return document.readyState === "complete";
+}
 function setupCanvas(){
 	const canvas = document.getElementById('main');
 	canvas.width  = window.innerWidth;
@@ -185,4 +188,6 @@ function moveleft() {
 function moveright() {
   myGamePiece.speedX += 5;
 }
-startGame()
+if(checkLoaded()){
+  startGame()
+}
